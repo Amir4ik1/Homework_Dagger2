@@ -1,8 +1,9 @@
 package ru.otus.daggerhomework
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
+import ru.otus.daggerhomework.di.DaggerMainActivityComponent
+import ru.otus.daggerhomework.di.MainActivityComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

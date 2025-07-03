@@ -3,6 +3,7 @@ package ru.otus.daggerhomework
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import ru.otus.daggerhomework.di.ActivityScope
 import javax.inject.Inject
 
 @ActivityScope

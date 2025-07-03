@@ -3,14 +3,19 @@ package ru.otus.daggerhomework
 import android.app.Activity
 import android.content.Context
 import android.widget.Toast
+import ru.otus.daggerhomework.di.ActivityContext
+import javax.inject.Inject
 
-class ProducerViewModel(
+class ProducerViewModel @Inject constructor(
     private val colorGenerator: ColorGenerator,
-    private val context: Context
+    @ActivityContext
+    private val context: Context,
+    private val homeworkObserver: HomeworkObserver
 ) {
 
-    fun generateColor() {
+    suspend fun generateColor() {
         if (context !is Activity) throw RuntimeException("Activity context is required")
+        homeworkObserver.send(colorGenerator.generateColor())
         Toast.makeText(context, "Color sent", Toast.LENGTH_LONG).show()
     }
 }
